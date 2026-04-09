@@ -1,0 +1,331 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 720" font-family="'Segoe UI', 'Helvetica Neue', sans-serif">
+  <defs>
+    <style>
+      .comp-body { fill: #f8f9fa; stroke: #343a40; stroke-width: 1.5; rx: 6; }
+      .comp-header { fill: #2563eb; rx: 6; }
+      .comp-header-text { fill: #fff; font-size: 11px; font-weight: 600; letter-spacing: 0.5px; }
+      .comp-label { fill: #1e293b; font-size: 10px; font-weight: 500; }
+      .pin-label { fill: #64748b; font-size: 8.5px; font-weight: 400; }
+      .pin-dot { fill: #2563eb; }
+      .wire-power { stroke: #dc2626; stroke-width: 1.8; fill: none; }
+      .wire-gnd { stroke: #1e293b; stroke-width: 1.8; fill: none; }
+      .wire-signal { stroke: #2563eb; stroke-width: 1.5; fill: none; }
+      .wire-data { stroke: #059669; stroke-width: 1.5; fill: none; }
+      .wire-ctrl { stroke: #d97706; stroke-width: 1.5; fill: none; }
+      .title-text { fill: #0f172a; font-size: 22px; font-weight: 700; letter-spacing: -0.5px; }
+      .subtitle-text { fill: #64748b; font-size: 12px; font-weight: 400; }
+      .legend-text { fill: #475569; font-size: 9px; font-weight: 500; }
+      .section-label { fill: #94a3b8; font-size: 9px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; }
+      .note-text { fill: #64748b; font-size: 8px; }
+    </style>
+    <!-- Arrow marker -->
+    <marker id="arrow-blue" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#2563eb"/>
+    </marker>
+    <marker id="arrow-green" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#059669"/>
+    </marker>
+    <marker id="arrow-orange" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#d97706"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1100" height="720" fill="#ffffff"/>
+  
+  <!-- Title Block -->
+  <text x="550" y="38" text-anchor="middle" class="title-text">Mero Vote — Circuit Diagram</text>
+  <text x="550" y="56" text-anchor="middle" class="subtitle-text">Arduino-Based Electronic Voting Machine with Touch Sensors &amp; GSM Connectivity</text>
+  <line x1="100" y1="68" x2="1000" y2="68" stroke="#e2e8f0" stroke-width="1"/>
+
+  <!-- ======================== -->
+  <!-- ARDUINO UNO (CENTER)     -->
+  <!-- ======================== -->
+  <g transform="translate(410, 160)">
+    <rect x="0" y="0" width="200" height="260" class="comp-body"/>
+    <rect x="0" y="0" width="200" height="28" class="comp-header"/>
+    <text x="100" y="18" text-anchor="middle" class="comp-header-text">ARDUINO UNO R3</text>
+    
+    <!-- Left pins -->
+    <text x="12" y="52" class="pin-label">D2</text>
+    <circle cx="-4" cy="48" r="3" class="pin-dot"/>
+    
+    <text x="12" y="72" class="pin-label">D3</text>
+    <circle cx="-4" cy="68" r="3" class="pin-dot"/>
+    
+    <text x="12" y="92" class="pin-label">D4</text>
+    <circle cx="-4" cy="88" r="3" class="pin-dot"/>
+    
+    <text x="12" y="112" class="pin-label">D5</text>
+    <circle cx="-4" cy="108" r="3" class="pin-dot"/>
+    
+    <text x="12" y="142" class="pin-label">D7</text>
+    <circle cx="-4" cy="138" r="3" class="pin-dot"/>
+    
+    <text x="12" y="162" class="pin-label">D8</text>
+    <circle cx="-4" cy="158" r="3" class="pin-dot"/>
+    
+    <text x="12" y="192" class="pin-label">D10</text>
+    <circle cx="-4" cy="188" r="3" class="pin-dot"/>
+    
+    <text x="12" y="212" class="pin-label">D11</text>
+    <circle cx="-4" cy="208" r="3" class="pin-dot"/>
+
+    <!-- Right pins -->
+    <text x="158" y="52" class="pin-label" text-anchor="end">5V</text>
+    <circle cx="204" cy="48" r="3" fill="#dc2626"/>
+    
+    <text x="158" y="72" class="pin-label" text-anchor="end">GND</text>
+    <circle cx="204" cy="68" r="3" fill="#1e293b"/>
+    
+    <text x="158" y="102" class="pin-label" text-anchor="end">A0</text>
+    <circle cx="204" cy="98" r="3" class="pin-dot"/>
+    
+    <text x="158" y="142" class="pin-label" text-anchor="end">TX (D1)</text>
+    <circle cx="204" cy="138" r="3" fill="#059669"/>
+    
+    <text x="158" y="162" class="pin-label" text-anchor="end">RX (D0)</text>
+    <circle cx="204" cy="158" r="3" fill="#059669"/>
+
+    <!-- EEPROM note -->
+    <rect x="40" y="225" width="120" height="24" rx="4" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="0.8"/>
+    <text x="100" y="241" text-anchor="middle" class="note-text" font-weight="600">EEPROM (1 KB)</text>
+  </g>
+
+  <!-- ======================== -->
+  <!-- TOUCH SENSORS (BOTTOM)   -->
+  <!-- ======================== -->
+  <text x="370" y="505" class="section-label">VOTE INPUT — TTP223 TOUCH SENSORS</text>
+  
+  <!-- Sensor 1 -->
+  <g transform="translate(120, 520)">
+    <rect x="0" y="0" width="100" height="70" class="comp-body"/>
+    <rect x="0" y="0" width="100" height="22" rx="6" fill="#7c3aed"/>
+    <text x="50" y="15" text-anchor="middle" class="comp-header-text" font-size="10">TTP223 #1</text>
+    <text x="50" y="42" text-anchor="middle" class="comp-label">Candidate A</text>
+    <text x="16" y="62" class="pin-label">VCC</text>
+    <text x="42" y="62" class="pin-label">SIG</text>
+    <text x="72" y="62" class="pin-label">GND</text>
+  </g>
+  
+  <!-- Sensor 2 -->
+  <g transform="translate(270, 520)">
+    <rect x="0" y="0" width="100" height="70" class="comp-body"/>
+    <rect x="0" y="0" width="100" height="22" rx="6" fill="#7c3aed"/>
+    <text x="50" y="15" text-anchor="middle" class="comp-header-text" font-size="10">TTP223 #2</text>
+    <text x="50" y="42" text-anchor="middle" class="comp-label">Candidate B</text>
+    <text x="16" y="62" class="pin-label">VCC</text>
+    <text x="42" y="62" class="pin-label">SIG</text>
+    <text x="72" y="62" class="pin-label">GND</text>
+  </g>
+  
+  <!-- Sensor 3 -->
+  <g transform="translate(420, 520)">
+    <rect x="0" y="0" width="100" height="70" class="comp-body"/>
+    <rect x="0" y="0" width="100" height="22" rx="6" fill="#7c3aed"/>
+    <text x="50" y="15" text-anchor="middle" class="comp-header-text" font-size="10">TTP223 #3</text>
+    <text x="50" y="42" text-anchor="middle" class="comp-label">Candidate C</text>
+    <text x="16" y="62" class="pin-label">VCC</text>
+    <text x="42" y="62" class="pin-label">SIG</text>
+    <text x="72" y="62" class="pin-label">GND</text>
+  </g>
+  
+  <!-- Sensor 4 -->
+  <g transform="translate(570, 520)">
+    <rect x="0" y="0" width="100" height="70" class="comp-body"/>
+    <rect x="0" y="0" width="100" height="22" rx="6" fill="#7c3aed"/>
+    <text x="50" y="15" text-anchor="middle" class="comp-header-text" font-size="10">TTP223 #4</text>
+    <text x="50" y="42" text-anchor="middle" class="comp-label">Candidate D</text>
+    <text x="16" y="62" class="pin-label">VCC</text>
+    <text x="42" y="62" class="pin-label">SIG</text>
+    <text x="72" y="62" class="pin-label">GND</text>
+  </g>
+
+  <!-- Signal wires from sensors to Arduino D2-D5 -->
+  <!-- Sensor 1 SIG -> Arduino D2 -->
+  <path d="M 162,590 L 162,610 L 100,610 L 100,460 L 370,460 L 370,208 L 406,208" class="wire-signal" marker-end="url(#arrow-blue)"/>
+  
+  <!-- Sensor 2 SIG (x=312) -> Arduino D3 (x=406, y=228) -->
+  <path d="M 312,590 L 312,620 L 90,620 L 90,450 L 360,450 L 360,228 L 406,228" class="wire-signal" marker-end="url(#arrow-blue)"/>
+  
+  <!-- Sensor 3 SIG (x=462) -> Arduino D4 (x=406, y=248) -->
+  <path d="M 462,590 L 462,630 L 80,630 L 80,440 L 350,440 L 350,248 L 406,248" class="wire-signal" marker-end="url(#arrow-blue)"/>
+  
+  <!-- Sensor 4 SIG (x=612) -> Arduino D5 (x=406, y=268) -->
+  <path d="M 612,590 L 612,640 L 70,640 L 70,430 L 340,430 L 340,268 L 406,268" class="wire-signal" marker-end="url(#arrow-blue)"/>
+
+  <!-- 5V power bus to sensors -->
+  <line x1="614" y1="208" x2="720" y2="208" class="wire-power"/>
+  <path d="M 720,208 L 720,510 L 136,510 L 136,520" class="wire-power"/>
+  <line x1="286" y1="510" x2="286" y2="520" class="wire-power"/>
+  <line x1="436" y1="510" x2="436" y2="520" class="wire-power"/>
+  <line x1="586" y1="510" x2="586" y2="520" class="wire-power"/>
+  <!-- Power bus horizontal -->
+  <line x1="136" y1="510" x2="586" y2="510" class="wire-power"/>
+  
+  <!-- GND bus to sensors -->
+  <line x1="614" y1="228" x2="730" y2="228" class="wire-gnd"/>
+  <path d="M 730,228 L 730,500 L 192,500 L 192,520" class="wire-gnd"/>
+  <line x1="342" y1="500" x2="342" y2="520" class="wire-gnd"/>
+  <line x1="492" y1="500" x2="492" y2="520" class="wire-gnd"/>
+  <line x1="642" y1="500" x2="642" y2="520" class="wire-gnd"/>
+  <line x1="192" y1="500" x2="642" y2="500" class="wire-gnd"/>
+
+  <!-- ======================== -->
+  <!-- BUZZER (TOP RIGHT)       -->
+  <!-- ======================== -->
+  <g transform="translate(750, 100)">
+    <rect x="0" y="0" width="120" height="65" class="comp-body"/>
+    <rect x="0" y="0" width="120" height="22" rx="6" fill="#0891b2"/>
+    <text x="60" y="15" text-anchor="middle" class="comp-header-text" font-size="10">PIEZO BUZZER</text>
+    <text x="60" y="42" text-anchor="middle" class="comp-label">Vote Confirmation</text>
+    <text x="20" y="58" class="pin-label">SIG</text>
+    <text x="85" y="58" class="pin-label">GND</text>
+  </g>
+  <!-- Buzzer SIG -> D7 -->
+  <path d="M 750,145 L 680,145 L 680,298 L 406,298" class="wire-signal" marker-end="url(#arrow-blue)"/>
+  <!-- Buzzer GND -->
+  <line x1="850" y1="155" x2="850" y2="175" class="wire-gnd"/>
+  <text x="850" y="188" text-anchor="middle" class="pin-label">GND</text>
+  <!-- GND symbol -->
+  <line x1="840" y1="182" x2="860" y2="182" stroke="#1e293b" stroke-width="2"/>
+  <line x1="844" y1="186" x2="856" y2="186" stroke="#1e293b" stroke-width="1.5"/>
+  <line x1="847" y1="190" x2="853" y2="190" stroke="#1e293b" stroke-width="1"/>
+
+  <!-- ======================== -->
+  <!-- KEY SWITCH (TOP LEFT)    -->
+  <!-- ======================== -->
+  <g transform="translate(80, 100)">
+    <rect x="0" y="0" width="130" height="65" class="comp-body"/>
+    <rect x="0" y="0" width="130" height="22" rx="6" fill="#dc2626"/>
+    <text x="65" y="15" text-anchor="middle" class="comp-header-text" font-size="10">KEY SWITCH</text>
+    <text x="65" y="42" text-anchor="middle" class="comp-label">Reset / Master Control</text>
+    <text x="25" y="58" class="pin-label">COM</text>
+    <text x="95" y="58" class="pin-label">NO</text>
+  </g>
+  <!-- Key switch -> D8 -->
+  <path d="M 210,145 L 310,145 L 310,318 L 406,318" class="wire-ctrl" marker-end="url(#arrow-orange)"/>
+
+  <!-- ======================== -->
+  <!-- BALLOT BUTTON (LEFT)     -->
+  <!-- ======================== -->
+  <g transform="translate(80, 220)">
+    <rect x="0" y="0" width="130" height="65" class="comp-body"/>
+    <rect x="0" y="0" width="130" height="22" rx="6" fill="#475569"/>
+    <text x="65" y="15" text-anchor="middle" class="comp-header-text" font-size="10">PUSH BUTTON</text>
+    <text x="65" y="42" text-anchor="middle" class="comp-label">Ballot Enable</text>
+    <text x="25" y="58" class="pin-label">IN</text>
+    <text x="95" y="58" class="pin-label">OUT</text>
+  </g>
+  <!-- Ballot button -> D10 -->
+  <path d="M 210,265 L 310,265 L 310,348 L 406,348" class="wire-ctrl" marker-end="url(#arrow-orange)"/>
+
+  <!-- ======================== -->
+  <!-- STATUS LED               -->
+  <!-- ======================== -->
+  <g transform="translate(80, 330)">
+    <rect x="0" y="0" width="130" height="55" class="comp-body"/>
+    <rect x="0" y="0" width="130" height="22" rx="6" fill="#16a34a"/>
+    <text x="65" y="15" text-anchor="middle" class="comp-header-text" font-size="10">STATUS LED</text>
+    <text x="65" y="42" text-anchor="middle" class="comp-label">Vote Indicator</text>
+    <text x="25" y="50" class="pin-label">Anode</text>
+  </g>
+  <!-- LED -> D11 -->
+  <path d="M 210,360 L 310,360 L 310,368 L 406,368" class="wire-signal" marker-end="url(#arrow-blue)"/>
+
+  <!-- ======================== -->
+  <!-- SIM800L GSM MODULE       -->
+  <!-- ======================== -->
+  <g transform="translate(780, 260)">
+    <rect x="0" y="0" width="160" height="100" class="comp-body"/>
+    <rect x="0" y="0" width="160" height="28" class="comp-header" fill="#059669"/>
+    <text x="80" y="18" text-anchor="middle" class="comp-header-text">SIM800L GSM</text>
+    
+    <text x="15" y="48" class="pin-label">TX</text>
+    <circle cx="-4" cy="44" r="3" fill="#059669"/>
+    
+    <text x="15" y="68" class="pin-label">RX</text>
+    <circle cx="-4" cy="64" r="3" fill="#059669"/>
+    
+    <text x="15" y="88" class="pin-label">GND</text>
+    <circle cx="-4" cy="84" r="3" fill="#1e293b"/>
+    
+    <text x="115" y="48" text-anchor="end" class="pin-label">VCC (3.9V)</text>
+    <text x="115" y="68" text-anchor="end" class="pin-label">Antenna</text>
+
+    <!-- Antenna icon -->
+    <line x1="130" y1="60" x2="150" y2="42" stroke="#059669" stroke-width="1.5"/>
+    <path d="M 142,38 L 150,42 L 158,38" fill="none" stroke="#059669" stroke-width="1.5"/>
+    <path d="M 138,34 L 150,40 L 162,34" fill="none" stroke="#059669" stroke-width="1"/>
+  </g>
+  
+  <!-- Arduino TX -> SIM800L RX -->
+  <path d="M 614,298 L 700,298 L 700,324 L 776,324" class="wire-data" marker-end="url(#arrow-green)"/>
+  <!-- Arduino RX -> SIM800L TX -->
+  <path d="M 614,318 L 690,318 L 690,304 L 776,304" class="wire-data" marker-end="url(#arrow-green)"/>
+  
+  <!-- SIM800L GND -->
+  <line x1="776" y1="344" x2="760" y2="344" class="wire-gnd"/>
+  <line x1="760" y1="340" x2="760" y2="348" stroke="#1e293b" stroke-width="2"/>
+  <text x="752" y="348" text-anchor="end" class="pin-label">GND</text>
+
+  <!-- ======================== -->
+  <!-- SQL DATABASE BLOCK       -->
+  <!-- ======================== -->
+  <g transform="translate(800, 420)">
+    <rect x="0" y="0" width="140" height="70" rx="8" fill="#eff6ff" stroke="#2563eb" stroke-width="1.5" stroke-dasharray="5,3"/>
+    <text x="70" y="20" text-anchor="middle" class="comp-label" font-weight="700" fill="#2563eb">SQL DATABASE</text>
+    <text x="70" y="36" text-anchor="middle" class="note-text">MS SQL Server</text>
+    <text x="70" y="50" text-anchor="middle" class="note-text">Vote storage &amp;</text>
+    <text x="70" y="62" text-anchor="middle" class="note-text">real-time sync</text>
+  </g>
+  <!-- Dashed arrow from SIM800L to DB -->
+  <path d="M 870,360 L 870,420" stroke="#2563eb" stroke-width="1.2" stroke-dasharray="4,3" fill="none" marker-end="url(#arrow-blue)"/>
+  <text x="882" y="395" class="note-text" fill="#2563eb">Cellular</text>
+
+  <!-- ======================== -->
+  <!-- ANDROID APP BLOCK        -->
+  <!-- ======================== -->
+  <g transform="translate(800, 530)">
+    <rect x="0" y="0" width="140" height="60" rx="8" fill="#f0fdf4" stroke="#059669" stroke-width="1.5" stroke-dasharray="5,3"/>
+    <text x="70" y="20" text-anchor="middle" class="comp-label" font-weight="700" fill="#059669">ANDROID APP</text>
+    <text x="70" y="36" text-anchor="middle" class="note-text">Live vote count</text>
+    <text x="70" y="48" text-anchor="middle" class="note-text">Admin controls</text>
+  </g>
+  <!-- Arrow DB to App -->
+  <path d="M 870,490 L 870,530" stroke="#059669" stroke-width="1.2" stroke-dasharray="4,3" fill="none" marker-end="url(#arrow-green)"/>
+
+  <!-- ======================== -->
+  <!-- LEGEND                   -->
+  <!-- ======================== -->
+  <g transform="translate(60, 660)">
+    <text x="0" y="0" class="section-label">WIRE LEGEND</text>
+    
+    <line x1="0" y1="16" x2="30" y2="16" class="wire-power"/>
+    <text x="36" y="20" class="legend-text">5V Power</text>
+    
+    <line x1="110" y1="16" x2="140" y2="16" class="wire-gnd"/>
+    <text x="146" y="20" class="legend-text">Ground</text>
+    
+    <line x1="220" y1="16" x2="250" y2="16" class="wire-signal"/>
+    <text x="256" y="20" class="legend-text">Signal (Digital I/O)</text>
+    
+    <line x1="380" y1="16" x2="410" y2="16" class="wire-data"/>
+    <text x="416" y="20" class="legend-text">Serial Data (TX/RX)</text>
+    
+    <line x1="550" y1="16" x2="580" y2="16" class="wire-ctrl"/>
+    <text x="586" y="20" class="legend-text">Control (Switch/Button)</text>
+    
+    <line x1="740" y1="16" x2="770" y2="16" stroke="#2563eb" stroke-width="1.2" stroke-dasharray="4,3"/>
+    <text x="776" y="20" class="legend-text">Logical / Wireless Link</text>
+  </g>
+
+  <!-- Pin mapping summary -->
+  <g transform="translate(60, 700)">
+    <text x="0" y="0" class="note-text" font-weight="600">PIN MAP:</text>
+    <text x="60" y="0" class="note-text">D2–D5 → Touch Sensors  |  D7 → Buzzer  |  D8 → Key Switch  |  D10 → Ballot Button  |  D11 → Status LED  |  D0/D1 (RX/TX) → SIM800L</text>
+  </g>
+
+  <!-- Border -->
+  <rect x="10" y="10" width="1080" height="700" fill="none" stroke="#e2e8f0" stroke-width="1" rx="4"/>
+</svg>

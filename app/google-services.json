@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1035155133840",
+    "project_id": "mero-vote",
+    "storage_bucket": "mero-vote.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1035155133840:android:09838e760f53dda829cf15",
+        "android_client_info": {
+          "package_name": "com.pec.project.merovote"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1035155133840-a407b1ksam5teeo959r84m95k3d2vv4n.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyANRNauWyQyJ7uMcQXYJ9VSjEek6XsVc9E"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1035155133840-a407b1ksam5teeo959r84m95k3d2vv4n.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Projects/MeroVote/app/src/main/res/drawable/bacgro.xml" value="0.2128205128205128" />
+        <entry key="..\:/Projects/MeroVote/app/src/main/res/drawable/background.xml" value="0.2128205128205128" />
+        <entry key="..\:/Projects/MeroVote/app/src/main/res/drawable/heading_bg.xml" value="1.0" />
+        <entry key="..\:/Projects/MeroVote/app/src/main/res/drawable/ic_user.xml" value="0.19814814814814816" />
+        <entry key="..\:/Projects/MeroVote/app/src/main/res/drawable/layout_bg.xml" value="0.2128205128205128" />
+        <entry key="..\:/Projects/MeroVote/app/src/main/res/layout/activity_about_us.xml" value="0.19429347826086957" />
+        <entry key="..\:/Projects/MeroVote/app/src/main/res/layout/activity_login.xml" value="0.22" />
+        <entry key="..\:/Projects/MeroVote/app/src/main/res/layout/activity_main.xml" value="0.22" />
+        <entry key="..\:/Projects/MeroVote/app/src/main/res/layout/activity_splash.xml" value="0.22" />
+        <entry key="..\:/Projects/MeroVote/app/src/main/res/layout/bacgro.xml" value="0.18840579710144928" />
+        <entry key="..\:/Projects/MeroVote/app/src/main/res/layout/fragment_faculty.xml" value="0.18" />
+        <entry key="..\:/Projects/MeroVote/app/src/main/res/layout/fragment_vote.xml" value="0.1" />
+        <entry key="..\:/Projects/MeroVote/app/src/main/res/layout/party_item_layout.xml" value="0.2" />
+        <entry key="..\:/Projects/MeroVote/app/src/main/res/layout/student_no_data_found.xml" value="0.21" />
+        <entry key="..\:/Projects/MeroVote/app/src/main/res/layout/vote_no_data_found.xml" value="0.1793478260869565" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>
